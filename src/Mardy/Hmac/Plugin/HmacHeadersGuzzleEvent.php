@@ -2,10 +2,10 @@
 
 namespace Mardy\Hmac\Plugin;;
 
-use Mardy\Hmac\Manager;
-use Mardy\Hmac\Adapters\AdapterInterface;
 use GuzzleHttp\Event\BeforeEvent;
 use GuzzleHttp\Event\SubscriberInterface;
+use Mardy\Hmac\Manager;
+use Mardy\Hmac\Adapters\AdapterInterface;
 
 /**
  * HmacHeadersGuzzleEvent Class

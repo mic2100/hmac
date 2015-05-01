@@ -2,18 +2,18 @@
 
 namespace HmacTests\Adapters;
 
-use Mardy\Hmac\Adapters\HashPbkdf2;
+use Mardy\Hmac\Adapters\HashHmac;
 
-class HashPbkdf2Test extends AbstractHashTest
+class HashHmacTest extends AbstractHashTest
 {
     public function testHash()
     {
-        $method = $this->getPublicHashMethod('Mardy\Hmac\Adapters\HashPbkdf2', 'hash');
-        $class = new HashPbkdf2;
+        $method = $this->getPublicHashMethod('Mardy\Hmac\Adapters\HashHmac', 'hash');
+        $class = new HashHmac;
         $hash = $method->invokeArgs($class, array('data', 'salt', 10));
 
         $this->assertSame(
-            'f87a3d2d424be36c07a3cf95dc9881a26d634adc778a0a93eec7b202a551c5095f1425a551a42000853f5a6072b7a2d34618fb8d9b14924438afb61fae6317f0',
+            '43df19dbd6af799125bd60a4dd1de19680400227badf8713112f04cfa10834cbee84a188a5929f3dd722e60faa9eb1d486c8d872548f9ce68dfb714a29431d1d',
             $hash
         );
     }

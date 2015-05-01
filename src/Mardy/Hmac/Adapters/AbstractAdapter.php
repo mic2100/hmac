@@ -97,7 +97,7 @@ abstract class AbstractAdapter implements AdapterInterface
      */
     public function encode()
     {
-        if (! $this->entity->isEncodable()) {
+        if (!$this->entity->isEncodable()) {
             throw new \InvalidArgumentException(
                 'The item is not encodable, make sure the key, time and data are set'
             );

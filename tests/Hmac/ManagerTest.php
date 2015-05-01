@@ -1,9 +1,11 @@
 <?php
 
+namespace HmacTests;
+
 use Mardy\Hmac\Manager;
 use Mardy\Hmac\Adapters\Hash;
 
-class ManagerTest extends PHPUnit_Framework_Testcase
+class ManagerTest extends \PHPUnit_Framework_Testcase
 {
     /**
      * @var \Mardy\Hmac\Manager
@@ -54,7 +56,7 @@ class ManagerTest extends PHPUnit_Framework_Testcase
     public function testSetValidConfig()
     {
         $this->assertInstanceOf(
-            "Mardy\Hmac\Manager",
+            'Mardy\Hmac\Manager',
             $this->manager->config([
                 'algorithm' => 'sha512',
                 'num-first-iterations' => 1,
@@ -84,5 +86,10 @@ class ManagerTest extends PHPUnit_Framework_Testcase
         $this->assertSame('test', $hmac['data']);
         $this->assertSame('367aa96189a95b92dfd0ec8adb6f84cd37eb58e38745551361e561814c085f8197b54612a481eb9b25f2c3de23a0c836298623348b3e005d52facaaeaff3eb7d', $hmac['hmac']);
         $this->assertSame(1396901689, $hmac['time']);
+    }
+
+    public function testGetHmac()
+    {
+        $this->assertInstanceOf('Mardy\Hmac\Entity', $this->manager->getHmac());
     }
 }

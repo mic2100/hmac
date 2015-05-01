@@ -1,8 +1,10 @@
 <?php
 
+namespace HmacTests;
+
 use Mardy\Hmac\Entity;
 
-class EntityTest extends PHPUnit_Framework_Testcase
+class EntityTest extends \PHPUnit_Framework_Testcase
 {
     /**
      * @var \Mardy\Hmac\Entity
